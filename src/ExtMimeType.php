@@ -1,10 +1,16 @@
 <?php
 
-namespace VNAppMob\ExtMimeType;
+namespace VNAppMob;
 
-class ExtMimeContentType
+/**
+ * ExtMimeType
+ *
+ * Usage - ExtMimeType::getMimeContentType($filename);
+ *
+ */
+class ExtMimeType
 {
-   protected $mimeMap = array(
+   protected static $mimeMap = array(
       'txt' => 'text/plain',
       'htm' => 'text/html',
       'html' => 'text/html',
@@ -59,11 +65,11 @@ class ExtMimeContentType
       'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
    );
 
-   public function getMimeContentType($filename): string
+   public static function getMimeContentType($filename): string
    {
       $extension = strtolower(array_pop(explode('.', $filename)));
-      if (array_key_exists($extension, $this->mimeMap)) {
-         return $this->mimeMap[$extension];
+      if (array_key_exists($extension, self::$mimeMap)) {
+         return self::$mimeMap[$extension];
       } elseif (function_exists('finfo_open')) {
          $finfo = finfo_open(FILEINFO_MIME);
          $mimetype = finfo_file($finfo, $filename);
