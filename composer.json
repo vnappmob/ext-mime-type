@@ -1,5 +1,6 @@
 {
     "name": "vnappmob/ext-mime-type",
+    "license": "MIT",
     "description": "Custom MIME Content Type",
     "authors": [
         {
