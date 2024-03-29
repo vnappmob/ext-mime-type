@@ -1,0 +1,17 @@
+{
+    "name": "vnappmob/ext-mime-type",
+    "description": "Custom MIME Content Type",
+    "authors": [
+        {
+            "name": "vnappmob",
+            "email": "hi@vnappmob.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "VNAppMob\\ExtMimeType\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
