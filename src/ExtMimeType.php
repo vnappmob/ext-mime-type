@@ -67,7 +67,8 @@ class ExtMimeType
 
    public static function getMimeContentType($filename): string
    {
-      $extension = strtolower(array_pop(explode('.', $filename)));
+      $filenames = explode('.', $filename);
+      $extension = strtolower(array_pop($filenames));
       if (array_key_exists($extension, self::$mimeMap)) {
          return self::$mimeMap[$extension];
       } elseif (function_exists('finfo_open')) {
